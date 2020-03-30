@@ -6,7 +6,7 @@ before_install:
   - docker build -t yzip/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true yzip/react-test npm start
+  - docker run -e CI=true yzip/react-test npm test
 
 after_success:
   - docker build -t yzip/multi-client ./client
