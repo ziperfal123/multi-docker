@@ -14,10 +14,10 @@ after_success:
   - docker build -t yzip/multi-server ./server
   - docker build -t yzip/multi-worker ./worker
 
-# First, we need to log in to the docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-# Now, we want to take those images and push them to docker hub
-- docker push yzip/multi-client
-- docker push yzip/multi-nginx
-- docker push yzip/multi-server
-- docker push yzip/multi-worker
+  # First, we need to log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Now, we want to take those images and push them to docker hub
+  - docker push yzip/multi-client
+  - docker push yzip/multi-nginx
+  - docker push yzip/multi-server
+  - docker push yzip/multi-worker
